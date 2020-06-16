@@ -28,8 +28,6 @@ Wahr!  Es kann zwar ein $\Imc$ geben mit: \{$t_{\Imc}(d) | d \in \Delta^{\Imc} $
 aber der zweite Teil: $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $ ist unmöglich erfüllbar, da intuitiv $t(d_0)$ mindestens eine Existenz Restriktion hat, für die es keinen r-Nachfolger (Zeuge) gibt. Somit wird es nie eine Interpretation $\Imc$ geben, für die gilt:  $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $  Vgl: Definition 5.3 schlechter Typ.
 
 
-
-
 \section*{Aufgabe 2)}
 \subsection*{a)}
 $C_0$ = $\exists r. \neg A$ erfüllbar bzgl. $\Tmc$ = $\{\forall r.A \sqsubseteq A, A \sqsubseteq \bot, \forall r.A \sqsubseteq \exists r.A\}$\\
@@ -79,7 +77,40 @@ Das Typeliminationsverfahren berechnet folgende Mengen:
 Der Algorithmus stoppt, weil $\Gamma_1$ = $\Gamma_2$.\\
 Das Ergebnis ist $erfüllbar$, weil es ein $t = t_1 \in \Gamma_2$ gibt mit $C_0 = \exists r. \neg A \in t$.
 \section*{Aufgabe 3)}
-tbd
+\subsection*{a)}
+Nach der ersten und zweiten Runde setzt Spieler1 die $p_2$ und $p_3$ auf 1 Spieler 2 wird gezwungen, $q_1$ und $q_2$ auf 1 zu setzen. Dann wird der dritte Teil der Formel Wahr und folglich wird die ganze Formel wahr und Spieler 1 wird gewinnen. Spieler 2 könnte in der vierten Runde ohne eine Änderung spielen, aber in der nächsten Runde würde Spieler1 $p_4$ auf 1 setzen und würde sofort gewinnen.\\
+
+\begin{table}
+\centering
+\begin{tabular}{llllllll}
+pl    & p1 & p2 & p3 & p4 & q1 & q2 &  result  \\
+$\pi$ &0    &0    &0    &0    &0    &0    &$(0)\vee(0) \vee(0)$         \\
+S1	  &0    &1    &0    &0    &0    &0    &$(0)\vee(0) \vee(0)$         \\
+S2	  &0    &1    &0    &0    &1    &0    &$(0)\vee(0) \vee(0)$         \\
+S1	  &0    &1    &1    &0    &1    &0    &$(0)\vee(0) \vee(0)$         \\
+S2	  &0    &1    &1    &0    &1    &1    &$(0)\vee(0) \vee(1)$         \\    
+\end{tabular}
+\end{table}
+
+\subsection*{b)}
+Spieler2 kann das Spiel gewinnen, indem er rückgängig macht, was Spieler1 gespielt hat.\\
+
+\begin{table}
+\centering
+\begin{tabular}{llllll}
+pl & 	p1 & p2 & q1 & q2 & result  \\
+$\pi$   &0    &0    &0    &0    & $((0)\wedge(0)\wedge(1) ) \vee  ( (1)\wedge(1)\wedge(0) ) $         \\
+S1   &1    &0    &0    &0    & $((1)\wedge(0)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
+S2   &1    &0    &0    &1    & $((1)\wedge(1)\wedge(0) ) \vee  ( (0)\wedge(0)\wedge(1) ) $         \\
+S1   &1    &1    &0    &1    & $((1)\wedge(0)\wedge(1) ) \vee  ( (0)\wedge(1)\wedge(0) ) $         \\
+S2   &1    &1    &1    &1    & $((0)\wedge(0)\wedge(1) ) \vee  ( (1)\wedge(1)\wedge(0) ) $         \\
+S1   &0    &1    &1    &1    & $((1)\wedge(0)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
+S2   &0    &0    &1    &0    & $((1)\wedge(1)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
+ ...  &  ...  &  ...  &  ...  & ...   &        ...
+\end{tabular}
+\end{table}
+
+
 
 \section*{Aufgabe 4)}
 tbd

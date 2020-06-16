@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.2)  16 JUN 2020 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.2)  16 JUN 2020 13:59
 entering extended mode
 **./aufgabe4.tex
 (aufgabe4.tex
@@ -1078,37 +1078,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--39
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--49
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 62--69
+Underfull \hbox (badness 10000) in paragraph at lines 60--67
 
  []
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 80.
+LaTeX Warning: Command \" invalid in math mode on input line 78.
 
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
  (aufgabe4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
 Package rerunfilecheck Info: File `aufgabe4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 22358 strings out of 480799
- 444114 string characters out of 2894384
- 752210 words of memory out of 3000000
+ 22361 strings out of 480799
+ 444142 string characters out of 2894384
+ 754210 words of memory out of 3000000
  37790 multiletter control sequences out of 15000+200000
  580249 words of font info for 98 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1126,9 +1136,9 @@ l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/amahdavi/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/amahdavi/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/ama
 hdavi/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on aufgabe4.pdf (3 pages, 137297 bytes).
+Output written on aufgabe4.pdf (4 pages, 141221 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  13837 words of extra memory for PDF output out of 14400 (max. 10000000)
 
