@@ -25,8 +25,7 @@ Wahr, denn bei der Typelimination generiert man alle Typen für $C_0$ und T (exp
 
 \subsection*{f)}
 Wahr!  Es kann zwar ein $\Imc$ geben mit: \{$t_{\Imc}(d) | d \in \Delta^{\Imc} $\}  $\subseteq \Gamma$\\
-aber der zweite Teil: $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $ ist unmöglich erfüllbar, da intuitiv $t(d_0)$ mindestens eine Existenz Restriktion hat, für die es keinen r-Nachfolger (Zeuge) gibt. Somit wird es nie eine Interpretation $\Imc$ geben, für die gilt:  $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $  Vgl: Definition 5.3 schlechter Typ.
-
+aber der zweite Teil: $t = t_{\Imc}(d_0)für ein d_0 \in \Delta^{\Imc} $
 
 
 
