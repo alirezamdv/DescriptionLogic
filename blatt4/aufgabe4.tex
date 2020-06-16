@@ -6,26 +6,26 @@
  
 \title{Beschreibungslogik | Übung 04}
 \author{D. Marschner, A. Mahdavi\\
-\href{mailto:alma@uni-bremen.de}{alma@uni-bremen.de}}
+\href{mailto:alma@uni-bremen.de}{alma@uni-bremen.de}\\
+\href{mailto:mail@dennis-marschner.de}{mail@dennis-marschner.de}
+}
 \date{}
 \maketitle
 \section*{Aufgabe 1)}
 \subsection*{a)}
-Wahr, intuitiv ist jeder semantische Typ auch ein syntaktischer Typ, umgekehrt ist das nicht der Fall. Das Ziel der Typelimination ist es, diejenigen syntaktischen Typen zu eliminieren, die im Modell der TBox nicht zu finden sind.\\
+Wahr, intuitiv ist jeder semantische Typ auch ein syntaktischer Typ, umgekehrt ist das nicht der Fall. Das Ziel der Typelimination ist es, diejenigen syntaktischen Typen zu eliminieren, die im Modell der TBox nicht zu finden sind.
 \subsection*{b)}
 Falsch! Schlussfolgerung Probleme Äquivalenz, Subsumtion und Konzept Erfüllbarkeit in Bezug auf T-Boxen sind in wechselseitiger Abhängigkeit. Man kann sie Polynomiell aufeinander reduzieren. 
-Vgl: Lemma 2.9\\
-
+Vgl: Lemma 2.9
 \subsection*{c)}
-Wahr, Der Tableau-Algorithmus benötigt im Worst-Case eine 3-fache exponentielle Laufzeit, aber die Typelimination benötigt  im Worst- sowie Best Case nur eine exponentielle Laufzeit.\\
+Wahr, Der Tableau-Algorithmus benötigt im Worst-Case eine 3-fache exponentielle Laufzeit, aber die Typelimination benötigt  im Worst- sowie Best Case nur eine exponentielle Laufzeit.
 \subsection*{d)}
-Falsch! Es gibt nur $2^n$ viele Typen und nach jedem Schritt der repeat-Schleife wird mindestens ein Typ eliminiert. -> Schleife terminiert nach maximal $2^n$ Durchläufen. Vgl. auch Folie 5.13.\\
+Falsch! Es gibt nur $2^n$ viele Typen und nach jedem Schritt der repeat-Schleife wird mindestens ein Typ eliminiert. Schleife terminiert nach maximal $2^n$ Durchläufen. Somit ist ein Backtracking nicht notwendig. Vgl. auch Folie 5.13.
 \subsection*{e)}
-Wahr, denn bei der Typelimination generiert man alle Typen für $C_0$ und T (exponentiell viele), wobei jeder Typ t Teilmenge von t $sub(C_0, T )$ ist. $sub(C_0, T)$ ist schon eine Art “Absorption”, da die Menge $sub(C_0,T)$ keine doppelte Konzepte enthält. Also die meisten “doppelten”,”unnötigen” Konzepte, die man durch Absorption verwerfen könnte, werden durch die Generierung der Sub-Menge per Definition ohnehin entfernt.\\
-
+Wahr, denn bei der Typelimination generiert man alle Typen für $C_0$ und $\Tmc$ (exponentiell viele), wobei jeder Typ $t$ Teilmenge von $sub(C_0, \Tmc)$ ist. $sub(C_0, \Tmc)$ ist schon eine Art “Absorption”, da die Menge $sub(C_0,\Tmc)$ keine doppelten Konzepte enthält. Also die meisten “doppelten”,”unnötigen” Konzepte, die man durch Absorption verwerfen könnte, werden durch die Generierung der Sub-Menge per Definition ohnehin entfernt.
 \subsection*{f)}
 Wahr!  Es kann zwar ein $\Imc$ geben mit: \{$t_{\Imc}(d) | d \in \Delta^{\Imc} $\}  $\subseteq \Gamma$\\
-aber der zweite Teil: $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $ ist unmöglich erfüllbar, da intuitiv $t(d_0)$ mindestens eine Existenz Restriktion hat, für die es keinen r-Nachfolger (Zeuge) gibt. Somit wird es nie eine Interpretation $\Imc$ geben, für die gilt:  $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $  Vgl: Definition 5.3 schlechter Typ.
+aber der zweite Teil: $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $ ist unmöglich erfüllbar, da intuitiv $t(d_0)$ mindestens eine Existenz Restriktion hat, für die es keinen r-Nachfolger (Zeuge) gibt. Somit wird es nie eine Interpretation $\Imc$ geben, für die gilt:  $t = t_{\Imc}(d_0)$ für ein $d_0 \in \Delta^{\Imc} $.  Vgl: Definition 5.3 schlechter Typ.
 
 
 \section*{Aufgabe 2)}
@@ -156,49 +156,57 @@ Das Typeliminationsverfahren berechnet folgende Mengen:
 Der Algorithmus stoppt, weil $\Gamma_1$ = $\Gamma_2$.\\
 Das Ergebnis ist $unerfüllbar$, weil es ein kein $t \in \Gamma_2$ gibt mit $C_0 = \forall r. \forall r. A \in t$.
 
-\newpage
-
 \section*{Aufgabe 3)}
 \subsection*{a)}
-Nach der ersten und zweiten Runde setzt Spieler1 die $p_2$ und $p_3$ auf 1 Spieler 2 wird gezwungen, $q_1$ und $q_2$ auf 1 zu setzen. Dann wird der dritte Teil der Formel Wahr und folglich wird die ganze Formel wahr und Spieler 1 wird gewinnen. Spieler 2 könnte in der vierten Runde ohne eine Änderung spielen, aber in der nächsten Runde würde Spieler1 $p_4$ auf 1 setzen und würde sofort gewinnen.\\
-
-\begin{table}
-\centering
-\begin{tabular}{llllllll}
-pl    & p1 & p2 & p3 & p4 & q1 & q2 &  result  \\
-$\pi$ &0    &0    &0    &0    &0    &0    &$(0)\vee(0) \vee(0)$         \\
-S1	  &0    &1    &0    &0    &0    &0    &$(0)\vee(0) \vee(0)$         \\
-S2	  &0    &1    &0    &0    &1    &0    &$(0)\vee(0) \vee(0)$         \\
-S1	  &0    &1    &1    &0    &1    &0    &$(0)\vee(0) \vee(0)$         \\
-S2	  &0    &1    &1    &0    &1    &1    &$(0)\vee(0) \vee(1)$         \\    
-\end{tabular}
-\end{table}
+Es gibt keine Gewinnstrategie für Spieler 2, da Spieler 1 nach folgendem Vorgehen immer gewinnen kann.\\
+\\
+Wir teilen die gesamte Formel zunächst auf in $\varphi = A \lor B \lor C$ mit $A$ = $(p_1 \land p_2 \land \neg q_1), B = (p_3 \land p_4 \land \neg q_2), C = (\neg(p_1 \lor p_4) \land q_1 \land q_2)$.\\
+\\
+Spieler 1 gewinnt also wenn $A = 1, B = 1$ oder $C = 1$.\\
+\\
+Als erstes nutzt Spieler 1 seine ersten 4 Züge um $p_1,p_2,p_3$ und $p_4$ auf 1 zu setzen. Weil Spieler 2 nicht verlieren will, musste er in dieser Zeit handeln und sowohl $q_1$ als auch $q_2$ auf 1 setzen. Andernfalls wäre $A = 1$ oder $B = 1$.  Im fünften Zug von Spieler 1 befinden wir uns somit in folgender Konfiguration $l(v) = (1,111111)$ im Format: $(Spielernummer,p_1,p_2,p_3,p_4,q_1,q_2)$, was bedeutet, dass Spieler 1 am Zug ist und alle Variablen auf 1 gesetzt sind.\\
+\\
+Nun setzt Spieler 1 $p_1$ auf 0 und wir befinden uns in $l(v) = (2,011111)$. Spieler 2 hat nun drei Möglichkeiten zu reagieren, wobei alle Wege in seine Niederlage führen.
+%
+\begin{itemize}
+  \item Option a) $q_1$ auf 0 setzen\\Wenn Spieler 1 danach $p_1$ auf 1 setzt, gewinnt er das Spiel mit $A=1$
+  \item Option b) $q_2$ auf 0 setzen\\Spieler 1 gewinnt mit $B=1$
+  \item Option c) passen\\Wenn Spieler 1 danach $p_4$ auf 1 setzt, gewinnt er das Spiel mit $C=1$
+\end{itemize}
+%
+Somit ist Spieler 1 spätestens nach seinem 6 Zug der Sieger.
 
 \subsection*{b)}
-Spieler2 kann das Spiel gewinnen, indem er rückgängig macht, was Spieler1 gespielt hat.\\
-
-\begin{table}
+Wenn wir uns die Formel $\varphi$ genauer anschauen wird klar, dass Spieler 1 zwei Szenarien verfolgen kann um zu gewinnen.
+%
+\begin{itemize}
+  \item Szenario 1) $p_1 = p_2$ mit $p_1 \neq q_1$ und $p_2 \neq q_2$
+  \item Szenario 2) $p_1 \neq p_2$ mit $p_1 = q_1$ und $p_2 = q_2$
+\end{itemize}
+%
+Spieler 2 muss, also je nachdem ob $p_1 = p_2$ oder $p_1 \neq p_2$ gesetzt ist, folgende Ziele verfolgen um nicht zu verlieren:
+%
+\begin{itemize}
+  \item Szenario 1) Setze $q_1$ und $q_2$ so, dass $p_1 = q_1$ und $p_2 = q_2$
+  \item Szenario 2) Setze $q_1$ und $q_2$ so, dass $p_1 \neq q_1$ und $p_2 \neq q_2$
+\end{itemize}
+%
+Spieler 2 versucht also immer die Erfolge von Spieler 1 rückgängig zu machen.\\
+\\
+Wie in der folgenden Gewinnstrategie (siehe Abbildung \ref{aufgabe3b}) für Spieler 2 zu sehen, gibt es einen unendlichen Baum $(V,R,l)$, wobei $l$ jedem Knoten $v \in V$ Konfiguration $l(v)$ zuweist. Diese Strategie macht es Spieler 1 unmöglich zu gewinnen.
+\begin{figure}[htbp]
 \centering
-\begin{tabular}{llllll}
-pl & 	p1 & p2 & q1 & q2 & result  \\
-$\pi$   &0    &0    &0    &0    & $((0)\wedge(0)\wedge(1) ) \vee  ( (1)\wedge(1)\wedge(0) ) $         \\
-S1   &1    &0    &0    &0    & $((1)\wedge(0)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
-S2   &1    &0    &0    &1    & $((1)\wedge(1)\wedge(0) ) \vee  ( (0)\wedge(0)\wedge(1) ) $         \\
-S1   &1    &1    &0    &1    & $((1)\wedge(0)\wedge(1) ) \vee  ( (0)\wedge(1)\wedge(0) ) $         \\
-S2   &1    &1    &1    &1    & $((0)\wedge(0)\wedge(1) ) \vee  ( (1)\wedge(1)\wedge(0) ) $         \\
-S1   &0    &1    &1    &1    & $((1)\wedge(0)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
-S2   &0    &0    &1    &0    & $((1)\wedge(1)\wedge(0) ) \vee  ( (0)\wedge(1)\wedge(1) ) $         \\
- ...  &  ...  &  ...  &  ...  & ...   &        ...
-\end{tabular}
-\end{table}
-
+\includegraphics[width=\textwidth]{aufgabe3_gewinnstrategie.png}
+\caption{Aufgabe 3b: Gewinnstrategie Spieler 2 }
+\label{aufgabe3b}
+\end{figure}
 
 
 \section*{Aufgabe 4)}
-tbd
+-
 
 \section*{Aufgabe 5)}
-tbd
+-
 
 
 \end{document}
