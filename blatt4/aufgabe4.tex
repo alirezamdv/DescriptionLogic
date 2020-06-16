@@ -13,8 +13,53 @@
 tbd
 
 \section*{Aufgabe 2)}
-tbd
-
+\subsection*{a)}
+$C_0$ = $\exists r. \neg A$ erfüllbar bzgl. $\Tmc$ = $\{\forall r.A \sqsubseteq A, A \sqsubseteq \bot, \forall r.A \sqsubseteq \exists r.A\}$\\
+\\
+$\Tmc$ in NNF bringen:
+%
+\begin{flalign*}
+\Tmc & = \{\forall r.A \sqsubseteq A, A \sqsubseteq \bot, \forall r.A \sqsubseteq \exists r.A\}\\
+&= \{\top \sqsubseteq (\neg \forall r.A \sqcup A) \sqcap (\neg A \sqcup \bot) \sqcap (\neg \forall r.A \sqcup \exists r.A) \}\\
+&= \{\top \sqsubseteq (\exists r. \neg A \sqcup A) \sqcap \neg A \sqcap (\exists r. \neg A \sqcup \exists r.A) \}
+\end{flalign*}
+%
+$\Tmc$ = $\{\top \sqsubseteq C_{\Tmc} \}$ mit $C_{\Tmc}$ = $\{(\exists r. \neg A \sqcup A) \sqcap \neg A \sqcap (\exists r. \neg A \sqcup \exists r.A) \}$\\
+\\
+$sub(C_0,\Tmc)$ generieren:
+%
+\begin{flalign*}
+sub(C_0,\Tmc) & = \{\exists r. \neg A, C_{\Tmc}, \exists r. \neg A \sqcup A, \neg A, \exists r. \neg A \sqcup \exists r.A, A, \exists r.A\}
+\end{flalign*}
+%
+Wegen $C_{\Tmc} \in t$ für jeden Typen $t$ für $C_0$ und $\Tmc$ und der Typ-Bedingung für $\sqcap$, muss jeder Typ die Menge $M = \{C_{\Tmc}, \exists r. \neg A \sqcup A, \neg A, \exists r. \neg A \sqcup \exists r.A \}$ enthalten.
+Aufgrund der Regel-(1) von Definition 5.2 (Typ) und weil $\neg A \in M$ ist $A \not \in t$. Dadurch ergibt sich mit der $\sqcup$-Regel, dass $\exists r. \neg A \in t$ sein muss.\\
+Somit ist $M = \{C_{\Tmc}, \exists r. \neg A \sqcup A, \neg A, \exists r. \neg A \sqcup \exists r.A, \exists r. \neg A\}$.
+\\
+Man kann sich also leicht überzeugen, dass es insgesamt zwei Typen für $C_0$ und $\Tmc$ gibt, nämlich:
+%
+\begin{flalign*}
+& t_0 = M \cup \{\exists r.A \}\\
+& t_1 = M
+\end{flalign*}
+%
+Der Typ $t_0$ ist schlecht in der Menge aller Typen: für $\exists r.A \in t_0$ und $\exists r. \neg A \in t_0$ ist die Menge aus Definition 5.3 $\{A, \neg A\}$, aber kein Typ enthält sowohl $A$ als auch $\neg A$.\\
+Der Typ $t_1$ ist nicht schlecht in der Menge aller Typen: für $\exists r. \neg A \in t_1$ ist die Menge aus Definition 5.3 $\{\neg A\}$, wobei $t_1$ selbst $\neg A$ enthält. Also $\neg A \in t_1 = t'$.\\
+\\
+Das Typeliminationsverfahren berechnet folgende Mengen:
+%
+\begin{flalign*}
+%
+\Gamma_0 & = \{t_0,t_1\}\\
+%
+\Gamma_1 & = \{t_1\}\\
+%
+\Gamma_2 & = \{t_1\}
+%
+\end{flalign*}
+%
+Der Algorithmus stoppt, weil $\Gamma_1$ = $\Gamma_2$.\\
+Das Ergebnis ist $erfüllbar$, weil es ein $t = t_1 \in \Gamma_2$ gibt mit $C_0 = \exists r. \neg A \in t$.
 \section*{Aufgabe 3)}
 tbd
 
@@ -25,5 +70,5 @@ tbd
 tbd
 
 
- \end{document}
+\end{document}
  
