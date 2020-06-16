@@ -33,7 +33,7 @@ sub(C_0,\Tmc) & = \{\exists r. \neg A, C_{\Tmc}, \exists r. \neg A \sqcup A, \ne
 \end{flalign*}
 %
 Wegen $C_{\Tmc} \in t$ für jeden Typen $t$ für $C_0$ und $\Tmc$ und der Typ-Bedingung für $\sqcap$, muss jeder Typ die Menge $M = \{C_{\Tmc}, \exists r. \neg A \sqcup A, \neg A, \exists r. \neg A \sqcup \exists r.A \}$ enthalten.
-Aufgrund der Regel-(1) von Definition 5.2 (Typ) und weil $\neg A \in M$ ist $A \not \in t$. Dadurch ergibt sich mit der $\sqcup$-Regel, dass $\exists r. \neg A \in t$ sein muss.\\
+Aufgrund der Regel-(1) von Definition 5.2 (Typ) und weil $\neg A \in sub(C_0,\Tmc)$ ist $A \not \in t$. Dadurch ergibt sich mit der $\sqcup$-Regel, dass $\exists r. \neg A \in t$ sein muss.\\
 Somit ist $M = \{C_{\Tmc}, \exists r. \neg A \sqcup A, \neg A, \exists r. \neg A \sqcup \exists r.A, \exists r. \neg A\}$.
 \\
 Man kann sich also leicht überzeugen, dass es insgesamt zwei Typen für $C_0$ und $\Tmc$ gibt, nämlich:
@@ -60,6 +60,86 @@ Das Typeliminationsverfahren berechnet folgende Mengen:
 %
 Der Algorithmus stoppt, weil $\Gamma_1$ = $\Gamma_2$.\\
 Das Ergebnis ist $erfüllbar$, weil es ein $t = t_1 \in \Gamma_2$ gibt mit $C_0 = \exists r. \neg A \in t$.
+%
+\\\\
+Model \Imc aus Beweis von Lemma 5.5:
+%
+\begin{center}
+\parbox[t]{.5\linewidth}{%
+\begin{tikzpicture}[%
+>=Latex,baseline=.2pt,every state/.style={draw=black,thin,fill=black!10,inner sep=1mm,minimum size=8mm},every edge/.style={draw=black,thin}]
+\node[state] (t0)                  {$t_0$};
+\node [above left=0mm and 12mm of t0] {$\Imc$};
+\path[->] (t0) edge [loop right] node[right] {$r$} ()        
+;
+\end{tikzpicture}%
+}
+\end{center}
+%
+\begin{flalign*}
+%
+\Delta^\Imc & = \{t_0\}\\
+%
+r^\Imc & = \{(t_0,t_0)\}\\
+%
+\end{flalign*}
+%
+Da $(C_0)^\Imc$ = $(\exists r. \neg A)^\Imc$ = $\{t_0\} \neq \emptyset$ ist $\Imc$ Modell von $C_0$.
+
+\subsection*{b)}
+$C_0$ = $\forall r. \forall r.A$ erfüllbar bzgl. $\Tmc$ = $\{\neg A \sqsubseteq B, A \sqsubseteq \neg B, \forall r.A \sqsubseteq \bot\}$\\
+\\
+$\Tmc$ in NNF bringen:
+%
+\begin{flalign*}
+\Tmc & = \{\neg A \sqsubseteq B, A \sqsubseteq \neg B, \forall r.A \sqsubseteq \bot\}\\
+&= \{\top \sqsubseteq (\neg \neg A \sqcup B) \sqcap (\neg A \sqcup \neg B) \sqcap (\neg \forall r.A \sqcup \bot) \}\\
+&= \{\top \sqsubseteq ( A \sqcup B) \sqcap (\neg A \sqcup \neg B) \sqcap (\exists r. \neg A \sqcup \bot) \}\\
+&= \{\top \sqsubseteq ( A \sqcup B) \sqcap (\neg A \sqcup \neg B) \sqcap \exists r. \neg A \}\\
+\end{flalign*}
+%
+$\Tmc$ = $\{\top \sqsubseteq C_{\Tmc} \}$ mit $C_{\Tmc}$ = $\{( A \sqcup B) \sqcap (\neg A \sqcup \neg B) \sqcap \exists r. \neg A \}$\\
+\\
+$sub(C_0,\Tmc)$ generieren:
+%
+\begin{flalign*}
+sub(C_0,\Tmc) & = \{\forall r. \forall r.A, C_{\Tmc},A \sqcup B,\neg A \sqcup \neg B, \exists r. \neg A, A, B, \neg A, \neg B,\forall r.A\}
+\end{flalign*}
+%
+Wegen $C_{\Tmc} \in t$ für jeden Typen $t$ für $C_0$ und $\Tmc$ und der Typ-Bedingung für $\sqcap$, muss jeder Typ die Menge $M = \{C_{\Tmc},A \sqcup B,\neg A \sqcup \neg B, \exists r. \neg A \}$ enthalten.
+Aufgrund der Regel-(1) von Definition 5.2 (Typ) und der $\sqcup$-Regel kann
+man sich leicht überzeugen, dass es insgesamt vier Typen für $C_0$ und $\Tmc$ gibt, nämlich:
+%
+\begin{flalign*}
+& t_0 = M \cup \{A, \neg B\}\\
+& t_1 = M \cup \{\neg A, B\}\\
+& t_2 = M \cup \{A, \neg B, \forall r. A\}\\
+& t_3 = M \cup \{\neg A, B, \forall r. A\}\\
+\end{flalign*}
+%
+Der Typ $t_0$ ist nicht schlecht in der Menge aller Typen: für $\exists r. \neg A \in t_0$ ist die Menge aus Definition 5.3 $\{\neg A\}$, wobei $\neg A \in t_1$. Also $\neg A \in t_1 = t'$.\\
+\\
+Der Typ $t_1$ ist nicht schlecht in der Menge aller Typen: für $\exists r. \neg A \in t_1$ ist die Menge aus Definition 5.3 $\{\neg A\}$, wobei $t_1$ selbst $\neg A$ enthält. Also $\neg A \in t_1 = t'$.\\
+\\
+Der Typ $t_2$ ist schlecht in der Menge aller Typen: für $\exists r. \neg A \in t_2$ und $\forall r. A \in t_2$ ist die Menge aus Definition 5.3 $\{\neg A, A\}$, aber kein Typ enthält sowohl $A$ als auch $\neg A$.\\
+\\
+Der Typ $t_3$ ist schlecht in der Menge aller Typen: für $\exists r. \neg A \in t_3$ und $\forall r. A \in t_3$ ist die Menge aus Definition 5.3 $\{\neg A, A\}$, aber kein Typ enthält sowohl $A$ als auch $\neg A$.\\
+\\
+Das Typeliminationsverfahren berechnet folgende Mengen:
+%
+\begin{flalign*}
+%
+\Gamma_0 & = \{t_0,t_1,t_2,t_3\}\\
+%
+\Gamma_1 & = \{t_0,t_1\}\\
+%
+\Gamma_2 & = \{t_0,t_1\}\\
+%
+\end{flalign*}
+%
+Der Algorithmus stoppt, weil $\Gamma_1$ = $\Gamma_2$.\\
+Das Ergebnis ist $unerfüllbar$, weil es ein kein $t \in \Gamma_2$ gibt mit $C_0 = \forall r. \forall r. A \in t$.
+
 \section*{Aufgabe 3)}
 tbd
 
