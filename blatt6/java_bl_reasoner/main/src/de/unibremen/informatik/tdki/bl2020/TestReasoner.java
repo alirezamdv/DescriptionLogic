@@ -61,6 +61,7 @@ public class TestReasoner {
                 reasoner = new ELReasoner();
                 OWLOntology result;
                 try {
+
                     result = reasoner.classify(man, ont[0]);
                     compareOntology(result, ont[1]);
                 }
@@ -125,7 +126,18 @@ public class TestReasoner {
         }
 
     }
-
+    static String prettyPrint2(String s) {
+        String[] parts = s.split(">");
+        String resultString = "";
+        int i=0;
+        for(String part :parts){
+            resultString = resultString+part.replaceAll("http://.*#", "");
+            if(i++ < parts.length-1){
+                resultString = resultString+">";
+            }
+        }
+        return resultString;
+    }
     static String prettyPrint(String s) {
         return s.replaceAll("http://.*#", "")
                 .replaceAll("<","")
