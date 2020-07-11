@@ -14,16 +14,17 @@ public class TestReasoner {
     private static String testFilePrefix = "tests/";
 
     private static String[][] testFileNames = {
-            {"test0in.owl", null},
+           /* {"test0in.owl", null},
             {"test1in.owl", "test1out.owl"},
-            {"test2in.owl", "test2out.owl"},
+            {"test2in.owl", "test2out.owl"},*/
             {"test3in.owl", "test3out.owl"},
-            {"test4in.owl", "test4out.owl"},
+           /* {"test4in.owl", "test4out.owl"},
             {"test5in.owl", "test5out.owl"},
             {"test6in.owl", "test6out.owl"},
             {"test7in.owl", "test7out.owl"},
-            {"test8in.owl", "test8out.owl"}
+            {"test8in.owl", "test8out.owl"}*/
     };
+
 
     public static void main(String[] args) {
     	
@@ -138,9 +139,28 @@ public class TestReasoner {
         }
         return resultString;
     }
+
+    /*
     static String prettyPrint(String s) {
         return s.replaceAll("http://.*#", "")
                 .replaceAll("<","")
                 .replaceAll(">","");
     }
+    */
+
+    static String prettyPrint(String str) {
+        String[] parts = str.split(">");
+        String s = "";
+        int i=0;
+        for(String p :parts){
+            s = s+p.replaceAll("http://.*#", "");
+            if(i++ < parts.length-1){
+                s = s+">";
+            }
+        }
+        return s;
+    }
+
+
+
 }
