@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test0in" uri="test0in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test1in" uri="test1in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test1out" uri="test1out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test2in" uri="test2in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test2out" uri="test2out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test3in" uri="test3in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test3out" uri="test3out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test4in" uri="test4in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test4out" uri="test4out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test5in" uri="test5in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test5out" uri="test5out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test6in" uri="test6in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/6/test6out" uri="test6out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/7/test7in" uri="test7in.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2019/7/test7out" uri="test7out.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1593527503256" name="http://www.semanticweb.org/schneider/ontologies/2020/5/test8in" uri="test8in.owl"/>
+    </group>
+</catalog>
