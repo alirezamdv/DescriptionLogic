@@ -14,15 +14,15 @@ public class TestReasoner {
     private static String testFilePrefix = "tests/";
 
     private static String[][] testFileNames = {
-           /* {"test0in.owl", null},
+            {"test0in.owl", null},
             {"test1in.owl", "test1out.owl"},
-            {"test2in.owl", "test2out.owl"},*/
+            {"test2in.owl", "test2out.owl"},
             {"test3in.owl", "test3out.owl"},
-           /* {"test4in.owl", "test4out.owl"},
+            {"test4in.owl", "test4out.owl"},
             {"test5in.owl", "test5out.owl"},
             {"test6in.owl", "test6out.owl"},
             {"test7in.owl", "test7out.owl"},
-            {"test8in.owl", "test8out.owl"}*/
+            {"test8in.owl", "test8out.owl"}
     };
 
 
